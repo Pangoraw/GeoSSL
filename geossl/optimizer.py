@@ -5,7 +5,7 @@ from torch import optim
 
 
 class LARS(optim.Optimizer):
-    def __init__(self, params, lr, weight_decay=0, momentum=0.9, eta=0.001,
+    def __init__(self, params, lr, weight_decay=0., momentum=0.9, eta=0.001,
                  weight_decay_filter=False, lars_adaptation_filter=False):
         defaults = dict(lr=lr, weight_decay=weight_decay, momentum=momentum,
                         eta=eta, weight_decay_filter=weight_decay_filter,

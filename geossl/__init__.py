@@ -1,7 +1,13 @@
-from .simclr import SimCLR
+from .barlowtwins import BarlowTwins
 from .backbones import ResNetBackbone
+from .byol import BYOL
+from .moco import MoCo
+from .simclr import SimCLR
 
 __all__ = [
-    "SimCLR",
+    "BarlowTwins",
+    "BYOL",
+    "MoCo",
     "ResNetBackbone",
+    "SimCLR",
 ]
