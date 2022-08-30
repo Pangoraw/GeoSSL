@@ -49,8 +49,8 @@ from geossl.backbones import ResNetBackbone
 model = ResNetBackbone.from_pretrained("resnet18/eurosat/simclr")
 ```
 
--> **Note**
--> Pre-trained weights for the Resisc-45 dataset will be released soon.
+> **Note**
+> Pre-trained weights for the Resisc-45 dataset will be released soon.
 
 ## Citing
 
