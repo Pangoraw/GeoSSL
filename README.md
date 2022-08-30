@@ -32,8 +32,25 @@ The [`train_evaluate.py`](https://github.com/Pangoraw/geossl/blob/main/train_eva
 
 ## Pre-trained weights
 
-> **Note**
-> Pre-trained weights will be released soon.
+The following pre-trained weights are available to download:
+
+|Backbone|Pre-training dataset|Method|Identifier|
+|--------|--------------------|------|----------|
+|ResNet18|EuroSAT|SimCLR|`"resnet18/eurosat/simclr.pth"`|
+|ResNet18|EuroSAT|MoCo v2|`"resnet18/eurosat/moco.pth"`|
+|ResNet18|EuroSAT|BYOL|`"resnet18/eurosat/byol.pth"`|
+|ResNet18|EuroSAT|Barlow Twins|`"resnet18/eurosat/barlow.pth"`|
+
+There is an helper on the backbone class to instantiate the model with the pre-trained weights:
+
+```python
+from geossl.backbones import ResNetBackbone
+
+model = ResNetBackbone.from_pretrained("resnet18/eurosat/simclr")
+```
+
+-> **Note**
+-> Pre-trained weights for the Resisc-45 dataset will be released soon.
 
 ## Citing
 
