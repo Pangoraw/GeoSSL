@@ -36,10 +36,10 @@ The following pre-trained weights are available to download:
 
 |Backbone|Pre-training dataset|Method|Identifier|
 |--------|--------------------|------|----------|
-|ResNet18|EuroSAT|SimCLR|`"resnet18/eurosat/simclr.pth"`|
-|ResNet18|EuroSAT|MoCo v2|`"resnet18/eurosat/moco.pth"`|
-|ResNet18|EuroSAT|BYOL|`"resnet18/eurosat/byol.pth"`|
-|ResNet18|EuroSAT|Barlow Twins|`"resnet18/eurosat/barlow.pth"`|
+|ResNet18|EuroSAT|SimCLR|`"resnet18/eurosat/simclr"`|
+|ResNet18|EuroSAT|MoCo v2|`"resnet18/eurosat/moco"`|
+|ResNet18|EuroSAT|BYOL|`"resnet18/eurosat/byol"`|
+|ResNet18|EuroSAT|Barlow Twins|`"resnet18/eurosat/barlow"`|
 
 There is an helper on the backbone class to instantiate the model with the pre-trained weights:
 
