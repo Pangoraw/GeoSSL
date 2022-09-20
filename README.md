@@ -36,10 +36,14 @@ The following pre-trained weights are available to download:
 
 |Backbone|Pre-training dataset|Method|Identifier|
 |--------|--------------------|------|----------|
-|ResNet18|EuroSAT|SimCLR|`"resnet18/eurosat/simclr"`|
-|ResNet18|EuroSAT|MoCo v2|`"resnet18/eurosat/moco"`|
-|ResNet18|EuroSAT|BYOL|`"resnet18/eurosat/byol"`|
-|ResNet18|EuroSAT|Barlow Twins|`"resnet18/eurosat/barlow"`|
+|ResNet18|[RESISC45](https://ieeexplore.ieee.org/abstract/document/7891544)|SimCLR|`"resnet18/resisc45/simclr"`|
+|ResNet18|[RESISC45](https://ieeexplore.ieee.org/abstract/document/7891544)|MoCo v2|`"resnet18/resisc45/moco"`|
+|ResNet18|[RESISC45](https://ieeexplore.ieee.org/abstract/document/7891544)|BYOL|`"resnet18/resisc45/byol"`|
+|ResNet18|[RESISC45](https://ieeexplore.ieee.org/abstract/document/7891544)|Barlow Twins|`"resnet18/resisc45/barlow"`|
+|ResNet18|[EuroSAT](https://github.com/phelber/EuroSAT)|SimCLR|`"resnet18/eurosat/simclr"`|
+|ResNet18|[EuroSAT](https://github.com/phelber/EuroSAT)|MoCo v2|`"resnet18/eurosat/moco"`|
+|ResNet18|[EuroSAT](https://github.com/phelber/EuroSAT)|BYOL|`"resnet18/eurosat/byol"`|
+|ResNet18|[EuroSAT](https://github.com/phelber/EuroSAT)|Barlow Twins|`"resnet18/eurosat/barlow"`|
 
 There is an helper on the backbone class to instantiate the model with the pre-trained weights:
 
@@ -48,9 +52,6 @@ from geossl.backbones import ResNetBackbone
 
 model = ResNetBackbone.from_pretrained("resnet18/eurosat/simclr")
 ```
-
-> **Note**
-> Pre-trained weights for the Resisc-45 dataset will be released soon.
 
 ## Citing
 
