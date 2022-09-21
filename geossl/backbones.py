@@ -14,7 +14,10 @@ WEIGHTS_RELEASE = "v0.1"
 
 def _get_weights_url(rn_model: str, dataset: str, method: str) -> str:
     assert rn_model == "resnet18"
-    assert dataset == "eurosat", "Only the 'eurosat' dataset is currently supported"
+    assert dataset in [
+        "eurosat",
+        "resisc45",
+    ], "Only the 'eurosat' or 'resisc45' dataset is currently supported"
     METHODS = ["simclr", "moco", "byol", "barlow"]
     assert method in METHODS, f"Expected one of {METHODS}, got {method!r}"
     return f"https://github.com/Pangoraw/GeoSSL/releases/download/{WEIGHTS_RELEASE}/{rn_model}-{dataset}-{method}.pth"
@@ -60,10 +63,15 @@ class ResNetBackbone(nn.Module):
         small_conv: bool = False,
     ):
         super(ResNetBackbone, self).__init__()
-        self.model = models.__dict__[resnet](
-            weights=models.ResNet18_Weights.IMAGENET1K_V1 if pretrained else None,
-            num_classes=num_classes,
-        )
+        kwargs = {}
+        if hasattr(models, "ResNet18_Weights"):  # Compat for torchvision < 0.13
+            kwargs["weights"] = (
+                models.ResNet18_Weights.IMAGENET1K_V1 if pretrained else None
+            )
+        else:
+            kwargs["pretrained"] = pretrained
+
+        self.model = models.__dict__[resnet](num_classes=num_classes, **kwargs,)
 
         if weights_path is not None and pretrained:
             raise Exception("Can't use both pretrained and weights_path")
